@@ -1,4 +1,55 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, -1.5),
+      rgba(0, 0, 0, 2.5)), url(./assets/scramble.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 10px;
+
+}
+
+.first-face-container {
+  width: 440px;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.head-start {
+  font-size: 25px;
+  font-weight: 500px;
+  padding: 16px 25px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.start-btn {
+  display: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px 100px 10px 100px;
+  padding: 10px 0;
+  font-size: 17px;
+  border-radius: 5px;
+  width: 50%;
+  background: #697565;
+}
+
+.start-btn:hover {
+  background: #88D66C;
+}
+
+/* <-----------intro start --------------> */
