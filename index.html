@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script defer src="/words.js"></script>
   <script defer src="/game.js"></script>
   <title>Word Scramble Game</title>
 </head>
@@ -12,15 +13,15 @@
 <body>
   <div class="first-face-container">
     <h3 class="head-start">Word Scramble Game</h3>
-    <button class="start-btn">Start the Game </button>
+    <button class="start-btn" onclick="startFunc()">Start the Game </button>
     <div class="content">
-      <p class="word">A</p>
+      <p class="word">Jvcaritpas</p>
       <div class="details">
         <p class="hint">Hint: <span></span></p>
         <p class="time">Time Left: <span><b>30</b>s</span></p>
-        <input type="text" spellcheck="false" placeholder="Enter a valid word">
+        <input type="text" spellcheck="false" placeholder="Enter a valid word" class="txt">
       </div>
-      <div class="button">
+      <div class="buttons">
         <button class="refresh">Refresh Word</button>
         <button class="check">Check Word</button>
       </div>
@@ -32,7 +33,7 @@
   <div class="modal" id="mymodal">
     <!-- The model content -->
     <div class="modal-content">
-      <span class="close"></span>
+      <span class="close">&times;</span>
       <p id="modal-text"></p>
     </div>
   </div>
