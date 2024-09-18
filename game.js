@@ -17,14 +17,17 @@ const hintDisplayElement = document.querySelector("#hint-location")
 ////////score//////
 const scoreBoard = document.querySelector(".value")
 let score = 0
-
+////////////////
 
 
 let pickedValue; /// which is shufflewords
 
+
+//////<--- Hints function ------>
 hintElement.addEventListener("click", () => {
   hintDisplayElement.innerText = pickedValue.hint
 })
+//////////////////////
 
 // Game start function!
 const startFunc = () => {
@@ -69,7 +72,19 @@ refreshWords.addEventListener('click', () => {
 ////////////<----><-------->
 
 ////----counter seconds function----//////////
-let timer = 30;
+let timer = 10;
+let setTimer = setInterval(() => {
+  if (timer <= 0) {
+    clearInterval()
+    countSeconds.innerText = "Time's up!";
+    countSeconds = setInterval(() => {
+      return countSeconds.innerText = "Try again!";
+    }, 1000);
+  } else {
+    countSeconds.innerText = "Time Left: " + timer;
+  }
+  timer -= 1;
+}, 1000)
 
 
 
