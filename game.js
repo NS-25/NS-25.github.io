@@ -33,10 +33,10 @@ const modalValue = () => {
   modalEle.style.display = "block";
   if (score >= 8) {
     modalContent.style.border = "5px solid #6EC207";
-    modalText.innerText = "Congradulation You Win!";
+    modalText.innerText = "Congradulation You Win 🤩!";
   } else if (score <= 5) {
     modalContent.style.border = "5px solid #F5004F";
-    modalText.innerText = " You lost try again!";
+    modalText.innerText = " You lost try again 😔!";
   }
 }
 
