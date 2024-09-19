@@ -19,6 +19,12 @@ The **Word Scramble Game** is a simple word puzzle game where players are given 
 4. If your guess is wrong, try again! You can keep guessing until you get it right.
 5. The game will keep track of your score based on the number of attempts.
 
+
+![image](https://github.com/user-attachments/assets/c5dd6495-3489-4424-86cf-d3e4ccfd094c)
+![F1BB4588-D6F2-419B-A6C8-9A38D51EBEA6](https://github.com/user-attachments/assets/1bc82880-453f-46c6-871c-c2e590793218)
+
+
+
 ## Built With
 
 - HTML5
