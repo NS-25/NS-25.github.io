@@ -69,9 +69,10 @@ body {
   text-align: center;
   letter-spacing: 20px;
   margin-right: -24px;
-  word-break: break-all;
+  /* word-break: break-all; */
   /*kinda like a line break / cant overflow the text*/
   text-transform: uppercase;
+  text-wrap: pretty;
 }
 
 .content .details {
@@ -186,6 +187,9 @@ body {
 
 /* modal content */
 .modal-content {
+  display: flex;
+  position: relative;
+  flex-direction: column;
   background-color: #fefefe;
   margin: auto;
   padding: 30px;
@@ -204,9 +208,11 @@ body {
 
 /* the close button */
 .close {
+  position: absolute;
+  top: 0;
   color: #aaaaaa;
-  float: right;
-  font-size: 18px;
+  align-self: end;
+  font-size: 25px;
   font-weight: bold;
 }
 

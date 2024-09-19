@@ -8,7 +8,7 @@ const refreshWords = document.querySelector(".refresh");
 const inputWords = document.querySelector(".txt");
 const checkWords = document.querySelector(".check")
 ////////countdown seconds///////
-const countSeconds = document.querySelector(".time")
+let countSeconds = document.querySelector(".time")
 
 //////Hints///////
 const hintElement = document.querySelector(".hint")
@@ -17,11 +17,33 @@ const hintDisplayElement = document.querySelector("#hint-location")
 ////////score//////
 const scoreBoard = document.querySelector(".value")
 let score = 0
-////////////////
+////////////////--->Modal part ---->
+const modalEle = document.querySelector(".modal");
+const modalContent = document.querySelector(".modal-content")
+const modalClose = document.querySelector(".close");
+const modalText = document.querySelector("#modal-text");
+
 
 
 let pickedValue; /// which is shufflewords
 
+
+///////////////<-----Modal function ---->
+const modalValue = () => {
+  modalEle.style.display = "block";
+  if (score >= 8) {
+    modalContent.style.border = "5px solid #6EC207";
+    modalText.innerText = "Congradulation You Win!";
+  } else if (score <= 5) {
+    modalContent.style.border = "5px solid #F5004F";
+    modalText.innerText = " You lost try again!";
+  }
+}
+
+
+modalClose.addEventListener('click', () => {
+  modalEle.style.display = "none";
+})
 
 //////<--- Hints function ------>
 hintElement.addEventListener("click", () => {
@@ -50,7 +72,7 @@ const shuffleAlphabet = (shuffleWord) => {
 ///////
 const scramble = () => {
   if (words.length === 0) {
-    scrambleWords.innerText = `Game Over! You scored ${score} points`
+    scrambleWords.innerText = `Game Over😀! You scored ${score} points`
   }
 
   let randomIdx = Math.floor(Math.random() * words.length)
@@ -72,35 +94,20 @@ refreshWords.addEventListener('click', () => {
 ////////////<----><-------->
 
 ////----counter seconds function----//////////
-let timer = 10;
+let timer = 60;
 let setTimer = setInterval(() => {
   if (timer <= 0) {
-    clearInterval()
+    clearInterval(setTimer) /// clear timer refrence...
     countSeconds.innerText = "Time's up!";
-    countSeconds = setInterval(() => {
-      return countSeconds.innerText = "Try again!";
-    }, 1000);
+    setTimeout(() => {
+      scrambleWords.innerText = `Game Over😀! You scored ${score} points`
+      modalValue();
+    }, 2000);
   } else {
-    countSeconds.innerText = "Time Left: " + timer;
+    countSeconds.innerText = "Time Left: " + timer + "s";
   }
   timer -= 1;
 }, 1000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////Inut value and check value ///////
 /**
  * if pickedword == input > success
@@ -112,11 +119,11 @@ checkWords.addEventListener('click', () => {
     score++
     scoreBoard.innerText = score
     scramble()
-    console.log("success")
+    // console.log("success")
   } else {
     score--
     scoreBoard.innerText = score
-    console.log("fail");
+    // console.log("fail");
   }
 
 })
